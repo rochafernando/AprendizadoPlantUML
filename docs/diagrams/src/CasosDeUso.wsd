@@ -1,0 +1,31 @@
+@startuml Fig31
+title Figura 3.1 - Exemplo de Atores
+:Gerente:
+:Funcionário: as Man2
+actor Cliente
+actor :Caixa Eletrônico: as System1
+actor :Sistema de Contas a Receber: as System2
+@enduml
+
+@startuml Fig32
+title Figura 3.2 - Exemplo de Caso de Uso
+(Abertura de Conta)
+@enduml
+
+
+@startuml Fig33
+title Figura 3.3 - Associação entre um anor e um caso de Uso
+:Cliente: -- (Abertura de Conta)
+@enduml
+
+@startuml Fig34
+title Figura 3.4 - Especialização / Generalização
+(Abertura de Conta) <|-- (Abertura de Conta Especial)
+(Abertura de Conta) <|-- (Abertura de Conta Poupança)
+@enduml
+
+@startuml Fig35
+title Figura 3.5 - Especialização / Generalização com Atores
+:Pessoa: <|-- :Pessoa Física:
+:Pessoa: <|-- :Pessoa Juridica:
+@enduml
