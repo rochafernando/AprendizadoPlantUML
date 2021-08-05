@@ -29,3 +29,77 @@ title Figura 3.5 - Especialização / Generalização com Atores
 :Pessoa: <|-- :Pessoa Física:
 :Pessoa: <|-- :Pessoa Juridica:
 @enduml
+
+@startuml Fig36
+left to right direction
+title Figura 3.6 - Inclusão
+actor Cliente 
+actor Banco #blue
+usecase Saque as S
+usecase Deposito as D
+usecase "Registrar Movimento" as RM
+Cliente -- S
+Cliente -- D
+Banco -left- S #blue
+Banco -left- D #blue
+(D) .> (RM) : <<include>>
+(S) .> (RM) : <<include:>>
+@enduml
+
+@startuml Fig37
+left to right direction
+title Figura 3.7 - Extensão
+actor Cliente 
+actor Funcionario #blue
+usecase "Encerrar Conta" as EC
+usecase Deposito as D
+usecase Saque as S
+Cliente -- (EC)
+Funcionario -- (EC)
+(S) .> (EC) : <<Extend>>
+(D) .> (EC) : <<Extend>>
+
+@enduml
+
+
+@startuml Fig38
+left to right direction
+title Figura 3.8 - Diagrama de Caso de Uso de um Sistema de Venda de Apólices de Seguros
+/'Bloco de Atores'/
+actor Cliente
+actor Vistoriador
+actor Secretária
+actor Corretor
+actor "Contas a Pagar e receber" as CPR
+actor Matriz
+/'---------------------------'/
+/'Casos de Uso'/
+usecase "Manter Clientes" as MC
+usecase "Manter Veículos" as MV
+usecase "Gerar Apólice" as GA
+usecase "Quitar Parcela" as QP
+usecase "Manter Sinistro" as MS
+usecase "Verifica Veículos" as VV
+usecase "Verifica Valor Seguro" as VVS
+usecase "Manter Parcelas a Receber" as MPaR
+/'---------------------------'/
+Cliente --> MC : Informações pessoais
+Cliente --> MV : Inf. Veiculo
+Cliente -- GA : Inf. Op. Parcelas
+Cliente -- QP
+Cliente --> MS
+MC -- Corretor
+MV -- Corretor
+GA -- Corretor : Inf. Apólice
+Corretor <- VV
+Corretor -- VVS
+VV -- Vistoriador
+VVS -- Matriz
+GA -.> MPaR : <<Include>>
+QP -.> MPaR : <<Include>>
+MPaR -- CPR
+QP -- Secretária
+MS -- Secretária
+MS <-- Vistoriador
+
+@enduml

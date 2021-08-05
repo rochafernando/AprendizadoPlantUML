@@ -13,6 +13,7 @@ Os atores representam os papéis desempenhados por usuários, algum hardware esp
 
 ## Casos de Uso
 São usados para uma descrição alto nível de um serviço, tarefas ou funções que podem ser utilizados dentro de alguma maneira dentro de um sistema, ele expressa e documenta  os comportamentos pretendidos para as funções dos sistemas
+
 ![Atores](../images/CasosDeUso/Fig32.png "Atores")
 
 ## Documentação de Caso de Uso
@@ -67,3 +68,26 @@ São utilizados para o reaproveitamento de uma Caso de Uso
 ![EspecCasoUso](../images/CasosDeUso/Fig34.png "EspecCasoUso")
 ![EspecCasoAtores](../images/CasosDeUso/Fig35.png "EspecCasoAtores")
 
+#### Inclusão (Include)
+Casos de uso de inclusão costuma ser utilizado quando existe um serviço, situação ou rotina comum a mais de um caso de uso, dessa forma a docto desse caso de uso fica especificada em um único caso de uso evitando duplicidade.
+
+!["DiagramInclude"](../images/CasosDeUso/Fig36.png "Diagrama Inclusão")
+
+No exemplo acima pode visualizar que o caso de uso Deposito e Saque devem "registrar o movimento".
+
+#### Extensão (Extension)
+Os casos de uso de Extensão são utilizados para situações que dependem de uma condição, ou seja, eles ocorrem em situações espcíficas.
+
+!["DiagramExtension"](../images/CasosDeUso/Fig37.png "Diagrama Extensão")
+
+No exemplo acima para encerrar a conta deve estar com o saldo em R$ 0, então caso a conta estiver negativa, deve ser realizado um deposito, caso estiver positiva realizar um saque.
+
+
+# Exemplos de Diagrama de Casos de Uso
+
+Teremos duas abordagens a seguir: 
+1. Sistema de controle de Apólices de Seguro
+2. Sistema de Controle Bancário
+
+
+## Sistema de Controle de Apólices de Seguro
