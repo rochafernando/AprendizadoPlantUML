@@ -103,3 +103,78 @@ MS -- Secretária
 MS <-- Vistoriador
 
 @enduml
+
+@startuml Fig39
+left to right direction
+title Figura 3.9 - Diagrama de Casos de Uso de um sistema Bancário
+
+/'Bloco Atores'/
+actor Cliente
+actor Funcionário
+actor Banco
+/'----------------'/
+/'Casos de Uso'/
+usecase "Abertura Conta Comum" as ACC
+usecase "Abertura Conta Especial" as ACE
+usecase "Abertura Conta Poupança" as ACP
+usecase "Manter Cliente" as MC
+usecase "Encerrar Conta" as EC
+usecase Saldo
+usecase Deposito
+usecase Saque
+usecase Extrato
+usecase "Registrar Movimento" as RM
+/'----------------------------'/
+
+(ACE) --|> (ACC)
+(ACP) --|> (ACC)
+(ACC) -- Funcionário
+(MC) -- Funcionário
+(ACC) <.- (MC) : <<Extend>>
+(EC) <.- (MC) : <<Extend>>
+Cliente -- (EC)
+Cliente -- ACC : Inf. Pessoais
+Cliente -- (Saldo)
+Cliente -- (Deposito)
+Cliente -- (Saque)
+Cliente -- (Extrato)
+(EC) -- Banco
+Saldo -- Banco
+Deposito -- Banco
+Saque -- Banco
+Extrato -- Banco
+(Deposito) -.> (RM) : <<Include>>
+(Saque) -.> (RM) : <<Include>>
+(EC) <.- (Deposito) : <<Extend>>
+(EC) <.- (Saque) : <<Extend>>
+(Saldo) <.- (EC) : <<Include>>
+@enduml
+
+@startuml Fig310
+left to right direction
+title Figura 3.10 - Exemplo de Notas
+note "Isso é um nota" as N1
+N1 -. (Abertura de Conta)
+@enduml
+
+@startuml Fig311
+left to right direction
+title Figura 3.11 - Exemplo de Pacotes
+package SCaP as "Sistema de Contas a Pagar" 
+package SS as  "Sistema de Seguradora"
+
+SCaP -.> SS
+@enduml 
+
+@startuml Fig312
+left to right direction
+title Figura 3.12 - Estereótipo de Rótulo
+usecase "Abertura de Contas" as AC <<process>>
+@enduml
+
+
+@startuml Fig313
+left to right direction
+title Figura 3.13 - Estereótipo de Gráfico
+boundary "Caixa Eletrônico"
+@enduml

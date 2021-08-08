@@ -5,3 +5,5 @@ Esse estudo visa aprender a ferramenta PlantUML para uitlização de diversos pr
 
 ![UML uma Abordagem Prática](images/images.jfif "UML Uma Abordagem Prática")
 
+[1. Casos de Uso](./UseCase/index.md)
+
