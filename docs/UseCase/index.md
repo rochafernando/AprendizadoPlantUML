@@ -91,3 +91,37 @@ Teremos duas abordagens a seguir:
 
 
 ## Sistema de Controle de Apólices de Seguro
+
+!["DiagramControleApolices"](../images/CasosDeUso/Fig38.png "Diagrama Controle de Apolices")
+
+Como podemos perceber no diagrama temos diversos casos de uso e fluxos direcionados, bi-direcionais e etc, não vou comentar eles aqui, deixo para a leitura do Livro. (Comprem é bacana)
+
+
+!["DiagramControleBancario"](../images/CasosDeUso/Fig39.png "Diagrama Controle de Apolices")
+
+O diagrama acima é um sistema de controle Bancario, no livro ele contem todas as descrições do de so de uso de forma documental.
+
+# Características Gerais da UML
+
+Se refere a pequenos artefatos que podem ser amplamente utilizados em vários diagramas da UML.
+
+## Notas
+Nota ou Nota Explicativa, deve apresentar algum texto explicativo.
+
+!["DiagramNota"](../images/CasosDeUso/Fig310.png "Notas")
+
+## Pacotes
+Permite a organização de elementos e grupos e nos auxiliam quando o sistema é extenso.
+
+!["DiagramNota"](../images/CasosDeUso/Fig311.png "Notas")
+
+## Estereotipos
+Eles dão maior extensibilidade aos nossos diagramas.
+Maiores detalhes no livro.
+
+!["DiagramEstRotulo"](../images/CasosDeUso/Fig312.png "Rótulo")
+
+!["DiagramNota"](../images/CasosDeUso/Fig313.png "Gráfico")
+
+
+
