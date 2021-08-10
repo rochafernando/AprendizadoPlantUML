@@ -1,0 +1,22 @@
+@startuml Fig41
+caption Figura 4.1 - Classe
+class Cliente {
+    
+    - CPF : long
+    - Nome : char[30]
+    - Endereco : char[30]
+    + int Consultar(long CPF)
+
+}
+@enduml
+
+@startuml Fig42
+caption Figura 4.2 - Associação Unária
+class Funcionário {
+    - Codigo : Long
+    - Nome : char[30]
+    - CodigoChefe: Long
+}
+
+Funcionário "0..*" -- Funcionário : Chefia
+@enduml
