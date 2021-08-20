@@ -42,5 +42,51 @@ Essas retas também podem conter títulos para determinar o tipo de vínculo ent
 
 Relação de uma classe com ela própria
 
-![AssociacaoUnaria](../images/DiagramaDeClasses/Fig41.png "AssociacaoUnaria")
+![AssociacaoUnaria](../images/DiagramaDeClasses/Fig42.png "AssociacaoUnaria")
 
+CódigoChefe é a referencia de si próprio nesse caso (maiores esclarecimentos no livro)
+
+
+|Multiplicidade|Significado
+|:--: | :---|
+0..1 |No mínimo zero (nenhum) e no máximo 1. Indica que os objetos das classes associadas não precisam obrigatoriamente estar relacionados. Mas se houver relacionamento indica que apenas uma instância da classe se relaciona com as instâncias da outra classe.
+1..1 | Um e Somente um. Indica que apenas um objeto da classe se relaciona com os objetos da outra classe.
+0..* | No mínimo nenhum e no máximo muitos. Indica que pode ou não haver instâncias da classe participando do relacionamento
+\* | Muitos. Indica que muitos objetos da classe estão envolvidos no relacionamento.
+1..* | No mínimo 1 e no máximo muitos. Indica que há pelo menos um objeto envolvido no relacionamento, podendo haver muitos envolvidos.
+3..5| No mínimo 3 e no máximo 5. Indica que existem pelo menos 3 instâncias envolvidas no relacionamento e que podem ser 4 ou 5 as instâncias envolvidas, mas não mais que isso.
+
+
+#### Associação Binária
+Descrevem o relacionamento entre duas classes.(É a mais comum nos diagramas)
+
+![AssociacaoBinaria](../images/DiagramaDeClasses/Fig43.png "AssociacaoBinaria").
+
+Podemos utilizar uma descricão, assim como sua direção de navegabilidade.
+
+![AssociacaoBinariaNavegação](../images/DiagramaDeClasses/Fig44.png "AssociacaoBinaria").
+
+**obs.: Maiores esclarecimentos no livro **
+
+#### Associação Ternária ou N-ária
+São Associações que conectam mais de duas classes
+
+![AssociacaoTernaria](../images/DiagramaDeClasses/Fig45.png "AssociacaoTernaria").
+
+#### Agregação
+
+A agregação acontece quando as informações de um objeto(chamado objeto-todo) precisa ser complementada por um ou mais objetos de outra classe(objeto-parte).
+A parte pode ser compartilhada por vários objetos.
+
+![Agregações](../images/DiagramaDeClasses/Fig46.png "Agregações").
+
+
+#### Composição
+
+Composição ocorre quando o vínculo entre Todo/Parte, são inteiramente dependentes, o objeto parte nesse caso, pertence totalmente ao objeto todo. A parte não existe sem o todo.
+
+![Composição](../images/DiagramaDeClasses/Fig47.png "Agregações").
+
+#### Especialização/Generalização
+Bem esse é o bom e velho conceito de Herança do OOP, mas voltado para um diagrama ;)
+![Generalizacao](../images/DiagramaDeClasses/Fig48.png "Generalizacao").

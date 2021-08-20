@@ -20,3 +20,178 @@ class Funcionário {
 
 Funcionário "0..*" -- Funcionário : Chefia
 @enduml
+
+@startuml Fig43
+caption Figura 4.3 - Associação binária
+left to right direction
+class Sócio {
+    - NomSocio: char[30]
+    - EndSocio: char[30]
+    - TelSocio : char[15]
+    - DatNasSocio: date
+
+    + int Registrar()
+    + int Consultar()
+}
+
+class Dependente {
+    - NomDep: char[30]
+    - DatNasDep: date    
+}
+
+Sócio -- "0..*" Dependente
+@enduml
+
+
+@startuml Fig44
+caption Figura 4.4 - Associação binária com Descrição e Navegabilidade
+left to right direction
+class Sócio {
+    - NomSocio: char[30]
+    - EndSocio: char[30]
+    - TelSocio : char[15]
+    - DatNasSocio: date
+
+    + int Registrar()
+    + int Consultar()
+}
+
+class Dependente {
+    - NomDep: char[30]
+    - DatNasDep: date    
+}
+
+Sócio --> "0..*" Dependente : Possui
+@enduml
+
+@startuml Fig45
+left to right direction
+caption Figura 4.5 - Associação N-ária
+class Professor
+class Turma
+class "Sala de Aula" as SalaAula
+diamond c1
+
+Professor "1..*" -- c1 : Leciona
+c1 -down- "1..*" Turma : Possui
+c1 -right- "1..*" SalaAula : Utiliza
+@enduml
+
+
+@startuml Fig46
+left to right direction
+caption Figura 4.6 - Agregação
+class Pedido {
+    - NroPedido: long
+    - DataPedido: date
+    - DataEntPedido: date
+}
+
+class "Itens Pedido" as ItensPedido {
+    - QtdItem: double
+    - ValUnitItem: double
+}
+
+class Produto {
+    - DesPro: char[50]
+    - QtdPro: double
+    - ValPro: double
+}
+
+Pedido o-- "1..*" ItensPedido : Possui
+ItensPedido -right- "1..*" Produto : Compõe
+
+
+@enduml
+
+
+@startuml Fig47
+left to right direction
+caption 4.7 Agregação - Composição
+class "Revista Cientifica" as RV {
+    - ISSNRev: long
+    - TitRev : char[60]
+    - PeridiocidadeRev: char[40]
+}
+
+class  "Edição"  as Edicao {
+    - NroEdi: int
+    - VolEdi: int
+    - DatEdi: date
+    - TiragemEdi: long
+    + Registrar() : int
+    + Consultar (int NroEdit, int VolEdi) : int
+
+}
+
+class Artigo {
+    - TitArt: char[20]
+    - PagIniArt: int
+    + Registrar()
+    + Consultar()
+}
+
+RV *-- "1..*" Edicao : Publica
+Edicao *-right- Artigo : Contém
+
+
+@enduml
+
+@startuml Fig48
+caption Figura 4.8 - Especialização/Generalização no Diagrama de Classes
+class "Conta Comum" as ContaComum {
+    # NroConta : long
+    # Saldo : double
+    # DataAbertura: date
+    # Tipo: int
+    # DataEncerramento : date
+    # Situacao : boolean
+    # Senha: int
+
+    + Abertura(double Saldo, int Tipo, int Senha) : long
+    + Encerramento() : int
+    + Saque(double Valor):int
+    + Deposito(long NroConta, double Valor): int
+    + VerSaldo() : double
+    + Consulta(long NroConta) : int
+    + ValSenha(int Senha) : int
+}
+
+class "Conta Especial" as ContaEspecial {
+    - Limite : double
+
+    + Abertura(double Saldo, int Senha, double Limite) : long
+    + Saque(double Valor) : int
+    + JurCheqEsp(double Juros) : int
+}
+
+class "Conta Poupança" as ContaPoupanca {
+    + Rendimento(date DataDia,double Juros): int
+}
+
+ContaComum <|-- ContaEspecial
+ContaComum <|-- ContaPoupanca
+
+
+@enduml
+
+@startuml Fig49
+caption Figura 4.9 Relacionamento de Dependência
+class "Item Carrinho" as ItemCarrinho
+class "Carrinho de Compra" as CarrinhoCompra
+
+ItemCarrinho .right.> CarrinhoCompra
+hide attributes
+@enduml
+
+@startuml Fig410
+caption Figura 4.10 - Relacionamento de Realização
+interface "Página de Submissão de Artigos" as PSA <<interface>>{
+    + RegistrarArtigos()
+}
+entity "Artigo Submetido" as ArtigoSubmetido <<entity>> {
+    + RegistrarArtigos()
+}
+PSA <|.. ArtigoSubmetido
+hide attributes
+@enduml
