@@ -195,3 +195,64 @@ entity "Artigo Submetido" as ArtigoSubmetido <<entity>> {
 PSA <|.. ArtigoSubmetido
 hide attributes
 @enduml
+
+
+@startuml Fig411
+caption Figura 4.11 - Classe Associativa
+
+class Artigo {
+    - TituloArtigo : char[20]
+    - PaginaInicioArtigo: int
+
+    + Registrar()
+    + Consultar()
+}
+
+class Autor {
+    - NomeAutor: char[40]
+    - EnderecoAturo: char[40]
+    - TelefoneAutor: char[15]
+    - EmailAutor: char[120]
+
+    + Registrar() : int
+    + Consultar() : int
+}
+
+Artigo "1..*"-right-"1..*" Autor
+(Artigo, Autor) . Escreve 
+
+hide Escreve methods
+hide Escreve fields
+hide Escreve circle
+
+@enduml
+
+@startuml Fig412
+caption Figura 4.12 - Classe Intermediária
+
+class Artigo {
+    - TituloArtigo : char[20]
+    - PaginaInicioArtigo: int
+
+    + Registrar()
+    + Consultar()
+}
+
+class Autor {
+    - NomeAutor: char[40]
+    - EnderecoAturo: char[40]
+    - TelefoneAutor: char[15]
+    - EmailAutor: char[120]
+
+    + Registrar() : int
+    + Consultar() : int
+}
+
+Artigo -right- "1..*" Escreve
+ Escreve "1..*" -right- Autor
+
+hide Escreve methods
+hide Escreve fields
+hide Escreve circle
+
+@enduml

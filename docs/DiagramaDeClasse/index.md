@@ -90,3 +90,13 @@ Composição ocorre quando o vínculo entre Todo/Parte, são inteiramente depend
 #### Especialização/Generalização
 Bem esse é o bom e velho conceito de Herança do OOP, mas voltado para um diagrama ;)
 ![Generalizacao](../images/DiagramaDeClasses/Fig48.png "Generalizacao").
+
+### Dependência
+Não é tão comum nos diagramas de classe, mas ele representa o grau de dependÊncia de uma classe em relação a outra, no caso, sempre que houver uma mudança de estado em uma classe, a outra classe também sofrerá uma mudança.
+
+![Dependencia](../images/DiagramaDeClasses/Fig49.png "Dependencia")
+
+### Realização
+Demonstra a utilização de interfaces.
+
+![Dependencia](../images/DiagramaDeClasses/Fig410.png "Dependencia")
