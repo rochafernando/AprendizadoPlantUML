@@ -75,6 +75,8 @@ diamond c1
 Professor "1..*" -- c1 : Leciona
 c1 -down- "1..*" Turma : Possui
 c1 -right- "1..*" SalaAula : Utiliza
+
+hide c1
 @enduml
 
 
